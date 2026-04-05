@@ -133,3 +133,17 @@ if (clasificando) {
             };
     })
 }
+
+
+let verificaPar = document.getElementById('parVerifica')
+
+if (verificaPar){
+    verificaPar.addEventListener("click",function(){
+        let n1 = Number(document.getElementById('num1').value);
+        if (n1 % 2 !== 0){
+            document.getElementById('parNoPar').innerHTML = n1 + ' no es par.';
+        } else {
+            document.getElementById('parNoPar').innerHTML = n1 + ' es par.';
+        };
+    })
+}
