@@ -147,3 +147,23 @@ if (verificaPar){
         };
     })
 }
+
+
+let verificaEdad = document.getElementById('verificarEdad')
+
+if (verificaEdad){
+    verificaEdad.addEventListener("click",function(){
+        let edad = Number(document.getElementById('numEdad').value);
+        let nombreActual = document.getElementById('nombre').value;
+        if (18-edad > 0 && edad > 0 && edad < 120){
+            let menor = 18-edad;
+            document.getElementById('esMayor').innerHTML = nombreActual + ' no es mayor de edad, le faltan ' + menor + ' años.';
+        };
+        if (18-edad <= 0 && edad > 0 && edad < 120) {
+            document.getElementById('esMayor').innerHTML = nombreActual + ' es mayor de edad.';
+        };
+        if (edad >= 120 || edad < 0) {
+            document.getElementById('esMayor').innerHTML ='Por favor, introduzca una edad real.';
+        }
+    })
+}
