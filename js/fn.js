@@ -10,6 +10,7 @@ let clasificando = document.getElementById('clasificar')
 let verificaPar = document.getElementById('parVerifica')
 let verificaEdad = document.getElementById('verificarEdad')
 let comparacion = document.getElementById('comparar')
+let calculoRectangulo = document.getElementById('periArea')
 
 if (saludar) {
     saludar.addEventListener("click",function holaMundo(){
@@ -20,7 +21,6 @@ if (saludar) {
 if (holaNom) {
     holaNom.addEventListener("click", function(){
         let nomActual = document.getElementById('nombre').value;
-
         if (nomActual === "") {
             document.getElementById("salud").innerHTML= "Por favor introduce tu nombre";  
         } else {
@@ -34,13 +34,11 @@ if (reconocedorDato) {
         let datoActual= document.getElementById('dato').value;
         let tipoDato = typeof datoActual;
         let esNumero;
-
         if (isNaN(datoActual) || datoActual === "") {
             esNumero = "No es número";
         } else {
             esNumero= "Es un número";
-        }
-        
+        } 
         let mensajeDato = `Tipo: ${tipoDato} - ${esNumero}`;
         document.getElementById("esNum").innerHTML = mensajeDato;
     })
@@ -157,12 +155,21 @@ if (comparacion){
         if (n1>n2) {
             document.getElementById('comparado').innerHTML = n1 + ' es mayor que ' + n2;
         };
-if (n1<n2) {
+        if (n1<n2) {
             document.getElementById('comparado').innerHTML = n2 + ' es mayor que ' + n1;
         };
-if (n1===n2) {
+        if (n1===n2) {
             document.getElementById('comparado').innerHTML = n1 + ' es igual a ' + n2;
         };      
     })
 }
+
+calculoRectangulo.addEventListener("click",function (){
+    let n1 = Number(document.getElementById('base').value);
+    let n2 = Number(document.getElementById('altura').value);
+    let area = n1 * n2;
+    let perimetro = 2 * (n1 + n2);
+    let mensajeRectangulo = 'El área de su rectángulo es ' + area + ' y su perimetro es ' + perimetro;
+    document.getElementById('resultadoRectangulo').innerHTML = mensajeRectangulo;
+})
 
