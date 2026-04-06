@@ -13,6 +13,7 @@ let comparacion = document.getElementById('comparar')
 let calculoRectangulo = document.getElementById('periArea')
 let calcularTemp = document.getElementById('calcularTemp')
 let pagar = document.getElementById('pagar')
+let evaluar = document.getElementById('evaluar')
 
  saludar?.addEventListener("click",function holaMundo(){
     alert("hola mundo");
@@ -163,4 +164,15 @@ pagar?.addEventListener("click", function(){
     let n2 = Number(document.getElementById('porcentaje').value);
     let propina = (n1 * n2) / 100;
     document.getElementById('pago').innerHTML = 'Su propina a pagar es: ' + propina;
+})
+
+evaluar?.addEventListener("click", function(){
+    let min = Number(document.getElementById('min').value);
+    let max = Number(document.getElementById('max').value);
+    let num = Number(document.getElementById('num').value);
+    if(num <=max && num >= min){
+        document.getElementById('numeroEvaluado').innerHTML = 'El número ' + num + ' es válido.';
+    } else {
+        document.getElementById('numeroEvaluado').innerHTML = 'El número ' + num + ' no es válido.';
+    }
 })
