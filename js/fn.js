@@ -12,6 +12,7 @@ let verificaEdad = document.getElementById('verificarEdad')
 let comparacion = document.getElementById('comparar')
 let calculoRectangulo = document.getElementById('periArea')
 let calcularTemp = document.getElementById('calcularTemp')
+let pagar = document.getElementById('pagar')
 
  saludar?.addEventListener("click",function holaMundo(){
     alert("hola mundo");
@@ -155,4 +156,11 @@ calcularTemp?.addEventListener("click", function(){
     let tempFarenheit = n1 * (9/5) + 32;
     let tempKelvin = n1 + 273.15;
     document.getElementById('farenKelvin').innerHTML = 'Eso equivale a ' + tempFarenheit + ' grados farenheit o ' + tempKelvin + ' grados Kelvin';
+})
+
+pagar?.addEventListener("click", function(){
+    let n1 = Number(document.getElementById('monto').value);
+    let n2 = Number(document.getElementById('porcentaje').value);
+    let propina = (n1 * n2) / 100;
+    document.getElementById('pago').innerHTML = 'Su propina a pagar es: ' + propina;
 })
