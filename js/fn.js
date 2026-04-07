@@ -18,7 +18,6 @@ let calculadora = document.getElementById('calculadora')
 let aplicarDescuento = document.getElementById('aplicaDesc')
 let bisiesto = document.getElementById('esBisiesto')
 let calcularIva = document.getElementById('calcularIva') 
-let conIva = document.getElementById('conIva')
 
  saludar?.addEventListener("click",function holaMundo(){
     alert("hola mundo");
@@ -239,7 +238,9 @@ bisiesto?.addEventListener("click", function(){
         document.getElementById('verificado').innerHTML = num + ' no es bisiesto.';
     };
 })
+
 calcularIva?.addEventListener("click", function(){
+    let conIva = document.getElementById('conIva');
     let num = Number(document.getElementById('precio').value);
     let precioTotal = num * 1.21;
     switch(conIva.checked){
