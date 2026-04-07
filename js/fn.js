@@ -16,6 +16,7 @@ let pagar = document.getElementById('pagar')
 let evaluar = document.getElementById('evaluar')
 let calculadora = document.getElementById('calculadora')
 let aplicarDescuento = document.getElementById('aplicaDesc')
+let bisiesto = document.getElementById('esBisiesto')
 
  saludar?.addEventListener("click",function holaMundo(){
     alert("hola mundo");
@@ -216,5 +217,23 @@ aplicarDescuento?.addEventListener("click", function(){
         document.getElementById('finalDesc').innerHTML = 'Su total es de: ' + total + ' ¡Una mega oferta!'
     }else{
         document.getElementById('finalDesc').innerHTML = 'Su total es de: ' + total + ' Oferta.'
+    };
+})
+
+bisiesto?.addEventListener("click", function(){
+    let num = Number(document.getElementById('anio').value);
+    let comprobado = num / 4;  
+    if (Number.isInteger(comprobado) === true){
+        if (Number.isInteger(num/100) === true){
+            if (Number.isInteger(num / 400) === true){
+                document.getElementById('verificado').innerHTML = num + ' es bisiesto.';
+            } else {
+                document.getElementById('verificado').innerHTML = num + ' no es bisiesto.';
+            }; 
+        } else {
+            document.getElementById('verificado').innerHTML = num + ' es bisiesto.';
+        }
+    } else {
+        document.getElementById('verificado').innerHTML = num + ' no es bisiesto.';
     };
 })
