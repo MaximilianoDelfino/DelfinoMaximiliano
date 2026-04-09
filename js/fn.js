@@ -354,9 +354,9 @@ calculadoraComp?.addEventListener("click", function(){
             if (n2 === 0){
                 total = "Error";
             } else {
-                total = (n1 / n2);
-                total = total;
-            }
+                total = n1 / n2;
+            };
+            break;
         case "pot":
             total = Math.pow(n1, n2);
             break;
