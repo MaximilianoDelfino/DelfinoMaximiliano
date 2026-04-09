@@ -21,6 +21,7 @@ let calcularIva = document.getElementById('calcularIva')
 let convertirSeg = document.getElementById('convertirSeg')
 let ingreso = document.getElementById('ingreso')
 let evaluarNota = document.getElementById('evaluarNota')
+calcularVuelto = document.getElementById('calcularVuelto')
 
  saludar?.addEventListener("click",function holaMundo(){
     alert("hola mundo");
@@ -315,4 +316,19 @@ evaluarNota?.addEventListener("click", function(){
             break;
     };
     document.getElementById('resultado').innerHTML = mensaje;
+})
+
+calcularVuelto?.addEventListener("click", function(){
+    let precio = Number(document.getElementById('precio').value);
+    let entregado = Number(document.getElementById('entregado').value);
+    let vuelto = precio - entregado;
+    if (precio > entregado){
+        document.getElementById('resultado').innerHTML = 'Faltan ' + vuelto + ' pesos';
+    };
+    if (precio === entregado){
+        document.getElementById('resultado').innerHTML = 'Monto exacto, sin vuelto';
+    };
+    if (entregado > precio){
+        document.getElementById('resultado').innerHTML = 'Vuelto de ' + (vuelto * -1) + ' pesos';
+    };
 })
