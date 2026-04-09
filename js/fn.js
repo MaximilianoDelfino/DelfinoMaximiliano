@@ -21,7 +21,9 @@ let calcularIva = document.getElementById('calcularIva')
 let convertirSeg = document.getElementById('convertirSeg')
 let ingreso = document.getElementById('ingreso')
 let evaluarNota = document.getElementById('evaluarNota')
-calcularVuelto = document.getElementById('calcularVuelto')
+let calcularVuelto = document.getElementById('calcularVuelto')
+let calculadoraComp = document.getElementById('calculadoraComp')
+let botonLimpiar = document.getElementById('limpiar')
 
  saludar?.addEventListener("click",function holaMundo(){
     alert("hola mundo");
@@ -331,4 +333,43 @@ calcularVuelto?.addEventListener("click", function(){
     if (entregado > precio){
         document.getElementById('resultado').innerHTML = 'Vuelto de ' + (vuelto * -1) + ' pesos';
     };
+})
+
+calculadoraComp?.addEventListener("click", function(){
+    let n1 = Number(document.getElementById('num1').value);
+    let n2 = Number(document.getElementById('num2').value);
+    let operador = document.getElementById('operacion');
+    let total = 0;
+    switch (operador.value){
+        case "suma":
+            total = n1 + n2;
+            break;
+        case "resta":
+            total = n1 - n2;
+            break;
+        case "multi":
+            total = n1 * n2;
+            break;
+        case "div": 
+            if (n2 === 0){
+                total = "Error";
+            } else {
+                total = (n1 / n2);
+                total = total;
+            }
+        case "pot":
+            total = Math.pow(n1, n2);
+            break;
+        default:
+            total = "Introduzca una operacion";
+    }
+    document.getElementById("resultado").innerHTML = total.toFixed(2);
+    console.log(total.toFixed(2));
+})
+
+botonLimpiar.addEventListener("click", function(){
+    document.getElementById('num1').value = '';
+    document.getElementById('num2').value = '';
+    document.getElementById('resultado').innerHTML = '0';
+    console.log('Limpiado');
 })
