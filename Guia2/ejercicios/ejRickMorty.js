@@ -66,16 +66,30 @@ fetch("https://rickandmortyapi.com/api/character")
 //     };
 // })
 
-boton?.addEventListener("click",function(){
-    let nombrePersonaje = document.getElementById("personajeNombre").value;
-    fetch(`https://rickandmortyapi.com/api/character?name=${nombrePersonaje}`)
-    .then(respuesta => respuesta.json())
-    .then(data => {
-        document.getElementById("resultado").innerHTML = "";
-        data.results.forEach(element => {
-            let personajeId = element.id;
-            document.getElementById("resultado").innerHTML += `<img src="https://rickandmortyapi.com/api/character/avatar/${personajeId}.jpeg">
-            <p>${nombrePersonaje} - ${element.status}</p>`
-        });
-    })
-});
+// boton?.addEventListener("click",function(){
+//     let nombrePersonaje = document.getElementById("personajeNombre").value;
+//     fetch(`https://rickandmortyapi.com/api/character?name=${nombrePersonaje}`)
+//     .then(respuesta => respuesta.json())
+//     .then(data => {
+//         document.getElementById("resultado").innerHTML = "";
+//         data.results.forEach(element => {
+//             let personajeId = element.id;
+//             document.getElementById("resultado").innerHTML += `<img src="https://rickandmortyapi.com/api/character/avatar/${personajeId}.jpeg">
+//             <p>${nombrePersonaje} - ${element.status}</p>`
+//         });
+//     })
+// });
+
+.then(data => {
+    let contEspecie = data.results.reduce((conteo,personaje) => {
+        let especie = personaje.species;
+        if (conteo[especie] === undefined){
+            conteo[especie] = 0;
+        }
+        conteo[especie] += 1;
+        return conteo;
+    }, {})
+    for (let [especie,cantidad] of Object.entries(contEspecie)){
+        document.getElementById("resultado").innerHTML += `<p>${especie} - ${cantidad}</p>`
+    }
+})
