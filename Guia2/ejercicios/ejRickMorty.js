@@ -4,7 +4,7 @@ fetch("https://rickandmortyapi.com/api/character")
     console.log(data);
     return data;
 })
-
+const boton = document.getElementById("boton");
 // .then(data => document.getElementById("resultado").innerHTML = data.results[0].name)
 
 // .then(data => {
@@ -29,4 +29,23 @@ fetch("https://rickandmortyapi.com/api/character")
 //        document.getElementById("resultado").innerHTML += `<p>${element.name} - ${element.species} </p>`;
 //     });
 //  })
+
+// boton?.addEventListener("click",function(){
+//     let idPersonaje = Number(document.getElementById("personajeId").value);
+//     fetch(`https://rickandmortyapi.com/api/character/${idPersonaje}`)
+//     .then (response => {
+//         if (response.ok === false){
+//             throw new Error("El ID no fue encontrado");
+//         }
+//         return response.json();
+//     })
+//     .then (personaje => {
+//         document.getElementById("resultado").innerHTML=`<img src="https://rickandmortyapi.com/api/character/avatar/${idPersonaje}.jpeg">
+//         <p>${personaje.name} - ${personaje.species} - ${personaje.status}</p>`;
+//     })
+//     .catch(error =>{
+//         document.getElementById("resultado").innerHTML = `<img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Windows_10_%26_11_BSOD_%28new_version%29.png" style="width: 500px;">
+//         <p>No se encontró el personaje</p>`
+//     })
+// })
 
