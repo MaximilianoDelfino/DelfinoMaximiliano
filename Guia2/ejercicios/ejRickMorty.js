@@ -33,11 +33,6 @@ fetch("https://rickandmortyapi.com/api/character")
 // boton?.addEventListener("click",function(){
 //     let idPersonaje = Number(document.getElementById("personajeId").value);
 //     fetch(`https://rickandmortyapi.com/api/character/${idPersonaje}`)
-//     .then (response => {
-//         if (response.ok === false){
-//             throw new Error("El ID no fue encontrado");
-//         }
-//         return response.json();
 //     })
 //     .then (personaje => {
 //         document.getElementById("resultado").innerHTML=`<img src="https://rickandmortyapi.com/api/character/avatar/${idPersonaje}.jpeg">
@@ -61,12 +56,26 @@ fetch("https://rickandmortyapi.com/api/character")
 //     })
 // })
 
-.then (data => {
-    let tieneImagen = (imagen) => (imagen.image) !== "";
-    let imagenes = data.results.every(tieneImagen);
-    if (imagenes === true) {
-        document.getElementById("resultado").innerHTML += `<p>✅ Todos los personajes tienen imagen</p>` 
-    }else{   
-        document.getElementById("resultado").innerHTML += `<p>⚠️ Hay personajes sin imagen</p>` 
-    };
-})
+// .then (data => {
+//     let tieneImagen = (imagen) => (imagen.image) !== "";
+//     let imagenes = data.results.every(tieneImagen);
+//     if (imagenes) {
+//         document.getElementById("resultado").innerHTML += `<p>✅ Todos los personajes tienen imagen</p>` 
+//     }else{   
+//         document.getElementById("resultado").innerHTML += `<p>⚠️ Hay personajes sin imagen</p>` 
+//     };
+// })
+
+boton?.addEventListener("click",function(){
+    let nombrePersonaje = document.getElementById("personajeNombre").value;
+    fetch(`https://rickandmortyapi.com/api/character?name=${nombrePersonaje}`)
+    .then(respuesta => respuesta.json())
+    .then(data => {
+        document.getElementById("resultado").innerHTML = "";
+        data.results.forEach(element => {
+            let personajeId = element.id;
+            document.getElementById("resultado").innerHTML += `<img src="https://rickandmortyapi.com/api/character/avatar/${personajeId}.jpeg">
+            <p>${nombrePersonaje} - ${element.status}</p>`
+        });
+    })
+});
