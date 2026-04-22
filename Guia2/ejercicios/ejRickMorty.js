@@ -14,3 +14,10 @@ fetch("https://rickandmortyapi.com/api/character")
 //     });
 // })
 
+// .then (data => {
+//     let personajesVivos = data.results.filter(data => data.status === "Alive");
+//     personajesVivos.forEach(element => {
+//         document.getElementById("resultado").innerHTML += `<p> ${element.name} </p>`;
+//     })
+// })
+
