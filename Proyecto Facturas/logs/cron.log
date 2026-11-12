@@ -1,0 +1,22 @@
+[2026-11-09 03:07:21] Inicio: 2 cuenta(s) con sincronización automática.
+[2026-11-09 03:07:23] cuenta 1 (usuario 2): factura id 3 sin leer (pdf_ilegible)
+[2026-11-09 03:07:24] cuenta 1 (usuario 2): factura id 2 sin leer (pdf_ilegible)
+[2026-11-09 03:07:25] cuenta 1 (usuario 2): factura id 1 sin leer (pdf_ilegible)
+[2026-11-09 03:07:25] cuenta 1 (usuario 2): 1 factura(s) del listado, PDF leídos 0, con error 3.
+[2026-11-09 03:07:26] cuenta 2 (usuario 1): 6 factura(s) del listado, PDF leídos 0, con error 0.
+[2026-11-09 03:07:26] Fin.
+[2026-11-09 08:00:01] Inicio: 2 cuenta(s) con sincronización automática.
+[2026-11-09 08:00:01] cuenta 1 (usuario 2): 1 factura(s) del listado, PDF leídos 0, con error 0.
+[2026-11-09 08:00:02] cuenta 2 (usuario 1): 6 factura(s) del listado, PDF leídos 0, con error 0.
+[2026-11-09 08:00:03] Fin.
+[2026-11-10 08:19:55] Inicio: 1 cuenta(s) con sincronización automática.
+[2026-11-10 08:20:01] cuenta 2 (usuario 1): 6 factura(s) del listado, PDF leídos 0, con error 0.
+[2026-11-10 08:20:01] Fin.
+[2026-11-11 02:00:08] Inicio: 2 cuenta(s) con sincronización automática.
+[2026-11-11 02:00:08] cuenta 1 (usuario 2): 1 factura(s) del listado, PDF leídos 0, con error 0.
+[2026-11-11 02:00:09] cuenta 2 (usuario 1): 6 factura(s) del listado, PDF leídos 0, con error 0.
+[2026-11-11 02:00:10] Fin.
+[2026-11-11 22:00:11] Inicio: 2 cuenta(s) con sincronización automática.
+[2026-11-11 22:00:12] cuenta 1 (usuario 2): 2 factura(s) del listado, PDF leídos 0, con error 0.
+[2026-11-11 22:00:13] cuenta 2 (usuario 1): 6 factura(s) del listado, PDF leídos 0, con error 0.
+[2026-11-11 22:00:14] Fin.
